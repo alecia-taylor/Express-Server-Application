@@ -103,3 +103,99 @@ select {
   font-size: 1rem;
   background-color: white;
 }
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fdfdfd;
+  margin: 0;
+  padding: 2rem;
+  color: #333;
+}
+
+.container {
+  max-width: 700px;
+  margin: auto;
+}
+
+.card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.recipe-title {
+  margin-bottom: 0.5rem;
+  font-size: 2.25rem;
+  color: #2c3e50;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.difficulty-easy {
+  background-color: #e0f7e9;
+  color: #2e7d32;
+}
+
+.difficulty-medium {
+  background-color: #fff8e1;
+  color: #f9a825;
+}
+
+.difficulty-hard {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+.list {
+  padding-left: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.list li {
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+
+h2 {
+  color: #34495e;
+  margin-top: 1.5rem;
+}
+
+.back-link {
+  text-decoration: none;
+  color: #3498db;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 2rem;
+  transition: color 0.3s ease;
+}
+
+.back-link:hover {
+  color: #2c80b4;
+}
+
+.list.ingredients li {
+  position: relative;
+  padding-left: 1.5rem; /* Give room for the bullet */
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+
+.list.ingredients li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6rem;
+  width: 10px;
+  height: 10px;
+  background-color: #2980b9;
+  border-radius: 50%;
+}

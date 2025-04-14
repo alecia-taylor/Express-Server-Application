@@ -5,25 +5,33 @@
   <title><%= recipe.name %></title>
 </head>
 <body>
-  <div class="container">
-    <h1><%= recipe.name %></h1>
-    <h3>Difficulty: <%= recipe.difficulty %></h3>
+  <div class="container recipe-details">
+    <div class="card">
+      <h1 class="recipe-title"><%= recipe.name %></h1>
+      <span class="badge difficulty-<%= recipe.difficulty.toLowerCase() %>">
+        <%= recipe.difficulty %>
+      </span>
 
-    <h3>Ingredients</h3>
-    <ul>
-      <% recipe.ingredients.forEach(i => { %>
-        <li><%= i %></li>
-      <% }); %>
-    </ul>
+      <section>
+        <h2>Ingredients</h2>
+        <ul class="list ingredients">
+          <% recipe.ingredients.forEach(i => { %>
+            <li><%= i %></li>
+          <% }); %>
+        </ul>
+      </section>
 
-    <h3>Steps</h3>
-    <ol>
-      <% recipe.steps.forEach(s => { %>
-        <li><%= s %></li>
-      <% }); %>
-    </ol>
+      <section>
+        <h2>Steps</h2>
+        <ol class="list steps">
+          <% recipe.steps.forEach(s => { %>
+            <li><%= s %></li>
+          <% }); %>
+        </ol>
+      </section>
 
-    <a href="/recipes" class="back-link">← Back to all recipes</a>
+      <a href="/recipes" class="back-link">← Back to all recipes</a>
+    </div>
   </div>
 </body>
 </html>
