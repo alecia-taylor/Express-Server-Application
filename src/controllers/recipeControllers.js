@@ -1,4 +1,5 @@
 import recipes from '../data/recipes.js';
+import comments from '../data/comments.js';
 
 export function index(req, res) {
   const { difficulty } = req.query;
@@ -8,8 +9,10 @@ export function index(req, res) {
 
 export function show(req, res) {
   const recipe = recipes.find(r => r.id == req.params.id);
-  if (!recipe) return res.status(404).send('Recipe not found');
-  res.render('recipes/show', { recipe });
+  if (!recipe) return res.status(404).json({ error: 'Recipe not found' });
+
+  const recipeComments = comments.filter(c => c.recipeId == recipe.id);
+  res.render('recipes/show', { recipe, comments: recipeComments });
 }
 
 export function create(req, res) {
@@ -44,3 +47,4 @@ export function destroy(req, res) {
 export function newRecipeForm(req, res) {
   res.render('recipes/new');
 }
+

@@ -30,8 +30,22 @@
         </ol>
       </section>
 
+      <h2>Comments</h2>
+      <ul class="list comments">
+        <% comments.forEach(comment => { %>
+          <li><%= comment.content %> <small>(<%= new Date(comment.timestamp).toLocaleString() %>)</small></li>
+        <% }); %>
+      </ul>
+
+      <h2>Add a Comment</h2>
+      <form action="/recipes/<%= recipe.id %>/comments" method="POST">
+        <textarea name="content" placeholder="Write your comment..." required></textarea>
+        <button type="submit">Post Comment</button>
+      </form>
+
       <a href="/recipes" class="back-link">← Back to all recipes</a>
     </div>
+
   </div>
 </body>
 </html>

@@ -1,7 +1,7 @@
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
-
+import commentRoutes from './src/routes/commentRoutes.js';
 import recipeRoutes from './src/routes/recipeRoutes.js';
 import { logger } from './src/middleware/logger.js';
 
@@ -23,6 +23,7 @@ app.set('views', path.join(__dirname, 'src', 'views')); // ✅ Set correct views
 
 // Routes
 app.use('/recipes', recipeRoutes);
+app.use('/recipes', commentRoutes);
 
 // Error-handling middleware
 app.use((err, req, res, next) => {
