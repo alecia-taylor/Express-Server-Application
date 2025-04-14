@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Recipes</title>
-    <link rel="stylesheet" href="/style.css" />
-  </head>
-  <body>
-    <h1>My Recipes</h1>
-    <ul>
-      <% recipes.forEach(recipe => { %>
-        <li><%= recipe.name %> – Difficulty: <%= recipe.difficulty %></li>
-      <% }) %>
-    </ul>
-  </body>
+<head>
+  <link rel="stylesheet" href="/styles.css">
+  <title>Recipes</title>
+</head>
+<body>
+  <h1>All Recipes</h1>
+  <ul>
+    <% recipes.forEach(recipe => { %>
+      <li><%= recipe.name %> - <%= recipe.difficulty %></li>
+    <% }); %>
+  </ul>
+  <a href="/recipes/new">Add New Recipe</a>
+</body>
 </html>
