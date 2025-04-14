@@ -193,6 +193,13 @@ h2 {
   color: #2c80b4;
 }
 
+.list.ingredients li {
+  position: relative;
+  padding-left: 1.5rem; /* Give room for the bullet */
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+
 .list.ingredients li::before {
   content: "";
   position: absolute;
