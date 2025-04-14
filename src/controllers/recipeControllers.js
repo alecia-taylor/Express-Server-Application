@@ -8,7 +8,8 @@ export function index(req, res) {
 
 export function show(req, res) {
   const recipe = recipes.find(r => r.id == req.params.id);
-  recipe ? res.json(recipe) : res.status(404).json({ error: 'Recipe not found' });
+  if (!recipe) return res.status(404).send('Recipe not found');
+  res.render('recipes/show', { recipe });
 }
 
 export function create(req, res) {

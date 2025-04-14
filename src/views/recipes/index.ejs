@@ -8,9 +8,9 @@
   <h1>All Recipes</h1>
   <ul>
     <% recipes.forEach(recipe => { %>
-      <li><%= recipe.name %> - <%= recipe.difficulty %></li>
+      <li><a href="/recipes/<%= recipe.id %>"><%= recipe.name %></a></li>
     <% }); %>
-  </ul>
+  </ul>  
   <a href="/recipes/new">Add New Recipe</a>
 </body>
 </html>
