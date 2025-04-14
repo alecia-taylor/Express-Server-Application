@@ -1,6 +1,5 @@
+import recipes from '../data/recipes.js'; 
 
-import recipes from '../data/recipes';
-
-exports.index = (req, res) => {
+export function index(req, res) {
   res.render('recipes/index', { recipes });
-};
+}

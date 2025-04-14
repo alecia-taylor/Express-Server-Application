@@ -1,5 +1,3 @@
-// src/data/recipes.js
-
 const recipes = [
     {
       id: 1,
