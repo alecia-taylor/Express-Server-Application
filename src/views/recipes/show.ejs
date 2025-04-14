@@ -5,24 +5,25 @@
   <title><%= recipe.name %></title>
 </head>
 <body>
-  <h1><%= recipe.name %></h1>
+  <div class="container">
+    <h1><%= recipe.name %></h1>
+    <h3>Difficulty: <%= recipe.difficulty %></h3>
 
-  <h3>Difficulty: <%= recipe.difficulty %></h3>
+    <h3>Ingredients</h3>
+    <ul>
+      <% recipe.ingredients.forEach(i => { %>
+        <li><%= i %></li>
+      <% }); %>
+    </ul>
 
-  <h3>Ingredients</h3>
-  <ul>
-    <% recipe.ingredients.forEach(i => { %>
-      <li><%= i %></li>
-    <% }); %>
-  </ul>
+    <h3>Steps</h3>
+    <ol>
+      <% recipe.steps.forEach(s => { %>
+        <li><%= s %></li>
+      <% }); %>
+    </ol>
 
-  <h3>Steps</h3>
-  <ol>
-    <% recipe.steps.forEach(s => { %>
-      <li><%= s %></li>
-    <% }); %>
-  </ol>
-
-  <a href="/recipes">Back to all recipes</a>
+    <a href="/recipes" class="back-link">← Back to all recipes</a>
+  </div>
 </body>
 </html>
