@@ -1,15 +1,8 @@
 import express from 'express';
 import * as commentController from '../controllers/commentController.js';
 
-const router = express.Router();
+const router = express.Router({ mergeParams: true });
 
-// GET all comments
-router.get('/', commentController.getAllComments);
-
-// POST (create) a new comment
-router.post('/', commentController.createComment);
-
-// DELETE a comment
-router.delete('/:id', commentController.deleteComment);
+router.post('/:recipeId/comments', commentController.create);
 
 export default router;
